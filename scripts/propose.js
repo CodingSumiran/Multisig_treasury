@@ -15,8 +15,8 @@ async function main() {
         console.log('  node scripts/propose.js 0x0000...0001 0.0015 "서버구매"   → L3 (60초)');
         console.log("\n등급 기준:");
         console.log("  L1: 0.0005 ETH 이하 → 타임락 없음");
-        console.log("  L2: 0.0005~0.001 ETH → 타임락 30초");
-        console.log("  L3: 0.001~0.002 ETH → 타임락 60초");
+        console.log("  L2: 0.0005~0.001 ETH → 타임락 1분 30초"); // 수정
+        console.log("  L3: 0.001~0.002 ETH → 타임락 2분");      // 수정
         process.exit(1);
     }
 
@@ -34,8 +34,8 @@ async function main() {
     const limits = await vault.getLimits();
     let level;
     if (amount <= limits.l1Threshold) level = "L1 (타임락 없음)";
-    else if (amount <= limits.l2Threshold) level = "L2 (타임락 30초)";
-    else level = "L3 (타임락 60초)";
+    else if (amount <= limits.l2Threshold) level = "L2 (타임락 1분 30초)";
+    else level = "L3 (타임락 2분)";
 
     console.log("========================================");
     console.log("📝 ETH 지출 제안");

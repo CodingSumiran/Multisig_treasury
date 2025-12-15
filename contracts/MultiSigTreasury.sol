@@ -174,8 +174,8 @@ contract MultiSigTreasury is ReentrancyGuard {
         
         // 타임락: 시연용 짧은 시간
         timelockDuration[Level.L1] = 0;        // 즉시
-        timelockDuration[Level.L2] = 30;       // 30초
-        timelockDuration[Level.L3] = 60;       // 60초
+        timelockDuration[Level.L2] = 90;       // 30초
+        timelockDuration[Level.L3] = 120;       // 60초
         
         // 한도: 시연용 아주 낮은 금액
         limits = LimitConfig({

@@ -79,9 +79,9 @@ contract ChangeTicket is ERC721, ERC721Enumerable, ERC721Burnable, AccessControl
         
         // 시연용: 짧은 타임락
         timelockBySeverity[Severity.LOW] = 0;
-        timelockBySeverity[Severity.MEDIUM] = 30;   // 30초
-        timelockBySeverity[Severity.HIGH] = 60;     // 60초
-        timelockBySeverity[Severity.CRITICAL] = 90; // 90초
+        timelockBySeverity[Severity.MEDIUM] = 90;   // 30초
+        timelockBySeverity[Severity.HIGH] = 120;     // 60초
+        timelockBySeverity[Severity.CRITICAL] = 150; // 90초
     }
 
     function mintTicket(address to, string calldata changeScope, Severity severity) 
